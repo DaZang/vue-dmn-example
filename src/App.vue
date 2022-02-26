@@ -1,20 +1,21 @@
 <template>
   <div id="app">
-    <vue-bpmn
-        url="diagram.bpmn"
+    <vue-dmn
+
+        url="diagram.dmn"
         v-on:error="handleError"
         v-on:shown="handleShown"
-    ></vue-bpmn>
+    ></vue-dmn>
   </div>
 </template>
 
 <script>
-import VueBpmn from './components/VueBpmn.vue'
+import VueDmn from './components/VueDmn.vue'
 
 export default {
   name: 'App',
   components: {
-    VueBpmn
+    VueDmn,
   },
   methods: {
     handleError: function(err) {
@@ -28,15 +29,16 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-.vue-bpmn-diagram-container {
-  height: 10000px;
+/*#app {*/
+/*  font-family: Avenir, Helvetica, Arial, sans-serif;*/
+/*  -webkit-font-smoothing: antialiased;*/
+/*  -moz-osx-font-smoothing: grayscale;*/
+/*  text-align: center;*/
+/*  color: #2c3e50;*/
+/*  margin-top: 60px;*/
+/*}*/
+
+.vue-dmn-diagram-container {
+  height: 600px;
 }
 </style>
