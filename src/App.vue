@@ -1,17 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <vue-bpmn
+        url="diagram.bpmn"
+        v-on:error="handleError"
+        v-on:shown="handleShown"
+    ></vue-bpmn>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import VueBpmn from './components/VueBpmn.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    VueBpmn
+  },
+  methods: {
+    handleError: function(err) {
+      console.error('failed to show diagram', err);
+    },
+    handleShown: function() {
+      console.log('diagram shown');
+    }
   }
 }
 </script>
@@ -24,5 +35,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.vue-bpmn-diagram-container {
+  height: 10000px;
 }
 </style>
