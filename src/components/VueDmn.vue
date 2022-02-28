@@ -12,8 +12,6 @@ import 'dmn-js/dist/assets/dmn-js-shared.css'
 import 'dmn-js/dist/assets/dmn-js-drd.css'
 import 'dmn-js/dist/assets/dmn-js-literal-expression.css'
 import 'dmn-js/dist/assets/dmn-font/css/dmn.css'
-// import 'dmn-js/dist/assets/diagram-js.css'
-// import 'dmn-js/dist/assets/diagram-js.css'
 import DmnJS from 'dmn-js/dist/dmn-modeler.development.js'
 
 export default {
@@ -43,6 +41,10 @@ export default {
       } else {
         self.$emit('shown', warnings)
       }
+      this.dmnViewer
+          .getActiveViewer()
+          .get('canvas')
+          .zoom('fit-viewport');
     })
     if (this.url) {
       this.fetchDiagram(this.url)
